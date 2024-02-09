@@ -1,6 +1,6 @@
 # Convert-JPG-PNG-to-WebP
 
-## As a WordPress developer myself I deeply invested in pushing the boundaries of website performance and visual quality, I'm excited to unveil a game-changing plugin that's set to redefine image handling in WordPress.
+## As a WordPress developer myself I deeply invested in pushing the boundaries of website performance and visual quality, I'm excited to bring you a plugin that's set to redefine image handling in WordPress.
 
 ### Crafted with the latest WordPress technologies, WebP Converter plugin is meticulously designed to boost your site's speed and efficiency. It effortlessly converts PNG and JPG images into the advanced WebP format, ensuring your website stays at the forefront of performance and optimization.
 
