@@ -22,7 +22,7 @@ The Convert JPG, PNG to WebP plugin simplifies the process of converting PNG, JP
 
 = How does the plugin work? =
 
-The plugin automatically converts supported image formats (JPEG, PNG, GIF) to WebP during the upload process. Users can configure general settings, adjust compression levels, and receive notifications for successful conversions or errors.
+The plugin automatically converts supported image formats (JPEG, PNG) to WebP during the upload process. Users can configure general settings, adjust compression levels, and receive notifications for successful conversions or errors.
 
 = Where can I find the plugin settings? =
 
