@@ -2,7 +2,7 @@
 /*
 Plugin Name: Convert JPG, PNG to WebP 
 Description: A simple yet powerful plugin. Convert PNG, JPG to WebP format easily with this plugin.
-Version: 1.0.4 
+Version: 1.0.5 
 Author: Luc Constantin
 Author URI: https://accolades.dev
 */
