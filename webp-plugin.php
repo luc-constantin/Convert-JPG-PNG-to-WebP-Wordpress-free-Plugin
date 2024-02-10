@@ -63,13 +63,13 @@ function webp_plugin_render_admin_page() {
 
         <!-- Display Icon -->
         <h2><?php echo esc_html__('Plugin Icon', 'webp-plugin'); ?></h2>
-        <p><img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'assets/icon-128x128.png'); ?>" alt="<?php esc_attr_e('Plugin Icon', 'webp-plugin'); ?>" /></p>
+        <p><img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'icon-128x128.png'); ?>" alt="<?php esc_attr_e('Plugin Icon', 'webp-plugin'); ?>" /></p>
 
         <!-- Display Screenshots -->
         <h2><?php echo esc_html__('Plugin Screenshots', 'webp-plugin'); ?></h2>
         <p><?php echo esc_html__('These screenshots showcase the functionality of the plugin:', 'webp-plugin'); ?></p>
         <div class="screenshots-container">
-        <img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'assets/Screenshot.png'); ?>" alt="<?php esc_attr_e('Screenshot', 'webp-plugin'); ?>" />
+        <img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'Screenshot.png'); ?>" alt="<?php esc_attr_e('Screenshot', 'webp-plugin'); ?>" />
         </div>
 
         <!-- Display WebP Conversion Status -->
