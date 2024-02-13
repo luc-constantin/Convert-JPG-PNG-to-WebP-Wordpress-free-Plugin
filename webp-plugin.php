@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Convert JPG, PNG to WebP 
+Plugin Name: Convert JPG, PNG to WebP
 Description: A simple yet powerful plugin. Convert PNG, JPG to WebP format easily with this plugin.
-Plugin URI:  https://accolades.dev
-Version: 1.0.5 
+Version: 1.0.6
 Author: Luc Constantin
+Plugin URI:  https://accolades.dev
 Author URI: https://accolades.dev
 */
 
@@ -12,6 +12,11 @@ Author URI: https://accolades.dev
 if ( ! defined( 'ABSPATH' ) ) {
     exit; 
 }
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 
 // Enqueue CSS
 function webp_plugin_enqueue_styles() {
@@ -49,8 +54,40 @@ function webp_plugin_admin_page() {
         'webp-plugin-settings',
         'webp_plugin_render_settings_page'
     );
+    //   // Submenu for Bulk Actions
+    //   add_submenu_page('webp-plugin-admin', 'Bulk Convert Images', 'Bulk Convert', 'manage_options', 'webp-plugin-bulk-convert', 'webp_plugin_bulk_convert_page');
 }
 add_action('admin_menu', 'webp_plugin_admin_page');
+
+function webp_plugin_bulk_convert_page() {
+    // Query all images from the Media Library
+    $query_images_args = array(
+        'post_type'      => 'attachment',
+        'post_mime_type' => 'image',
+        'post_status'    => 'inherit',
+        'posts_per_page' => -1,
+    );
+
+    $query_images = new WP_Query($query_images_args);
+
+    // Display images and checkboxes for selection
+    echo '<div class="wrap"><h1>Bulk Convert Images to WebP</h1><form id="bulk-convert-form">';
+
+    foreach ($query_images->posts as $image) {
+        echo '<div class="image-container">';
+        echo '<label>';
+        echo '<input type="checkbox" name="images[]" value="' . esc_attr($image->ID) . '" />';
+        echo wp_get_attachment_image($image->ID, 'thumbnail');
+        echo '</label>';
+        echo '</div>';
+    }
+
+    echo '<input type="submit" value="Convert Selected Images" class="button button-primary">';
+    echo '</form></div>';
+
+ 
+}
+
 
 // Render Admin Page
 function webp_plugin_render_admin_page() {
@@ -232,19 +269,33 @@ function webp_plugin_handle_upload_convert_to_webp($upload) {
 function webp_plugin_file_size_reduction_tips_callback() {
     $options = get_option('webp_plugin_options');
     $file_size_reduction_tips = isset($options['file_size_reduction_tips']) ? $options['file_size_reduction_tips'] : '';
-    $default_message = esc_html__("Upload, Install and Activate the plugin BEFORE uploading the images you would like to convert.", 'webp-plugin');
+    $default_message = esc_html__("Upload, Install and Activate the plugin <strong>BEFORE</strong> uploading the images you would like to convert.", 'webp-plugin');
 
     echo '<textarea name="webp_plugin_options[file_size_reduction_tips]" rows="5" cols="50">' . esc_textarea($file_size_reduction_tips ? $file_size_reduction_tips : $default_message) . '</textarea>';
 }
 
-// Image Compression Field Callback
+// Compression level
 function webp_plugin_image_compression_callback() {
     $options = get_option('webp_plugin_options');
-    $compression_level = isset($options['image_compression']) ? esc_attr($options['image_compression']) : '';
+    $compression_level = isset($options['image_compression']) ? esc_attr($options['image_compression']) : 74; // Default to 74 if not set
 
-    echo '<input type="number" name="webp_plugin_options[image_compression]" min="1" max="100" value="' . esc_attr($compression_level) . '" />';
-    echo '<p class="description">' . esc_html__('Enter a value between 1 (low compression) and 100 (high compression). Higher values may result in smaller file sizes but lower image quality.', 'webp-plugin') . '</p>';
+    // HTML for the range input and display percent
+    echo '<input type="range" id="webp_plugin_image_compression" name="webp_plugin_options[image_compression]" min="1" max="100" value="' . $compression_level . '" oninput="compressionLevelDisplay.value=this.value" />';
+    echo '<span id="compressionLevelDisplay"> ' . $compression_level . ' %</span>'; // Added spaces
+    echo '<p class="description">' . esc_html__('Drag the slider to set the image compression level. 1 (low compression) to 100 (high compression).', 'webp-plugin') . '</p>';
+
+    // Inline JavaScript to update the display percent
+    echo '<script type="text/javascript">
+        var compressionSlider = document.getElementById("webp_plugin_image_compression");
+        var compressionLevelDisplay = document.getElementById("compressionLevelDisplay");
+        compressionSlider.oninput = function() {
+            compressionLevelDisplay.innerHTML = " " + this.value + " %"; 
+        }
+    </script>';
 }
+
+
+
 
 // Settings Section Callback
 function webp_plugin_general_settings_callback() {
@@ -278,7 +329,6 @@ function webp_plugin_sanitize_options($input) {
     // Sanitize Image Compression Level
     if (isset($input['image_compression'])) {
         $output['image_compression'] = intval($input['image_compression']);
-        // Ensure the value is within the valid range (1 to 100)
         $output['image_compression'] = max(1, min(100, $output['image_compression']));
     }
 
