@@ -54,6 +54,7 @@ function webp_plugin_admin_page() {
         'webp-plugin-settings',
         'webp_plugin_render_settings_page'
     );
+    
     //   // Submenu for Bulk Actions
     //   add_submenu_page('webp-plugin-admin', 'Bulk Convert Images', 'Bulk Convert', 'manage_options', 'webp-plugin-bulk-convert', 'webp_plugin_bulk_convert_page');
 }
