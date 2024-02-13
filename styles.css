@@ -1,4 +1,89 @@
 /* styles.css */
 .wrap {
-    margin: 20px;
+    margin:5%;
 }
+
+
+       input[type="range"] {
+            -webkit-appearance: none;
+            width: 20%;
+            margin: 13.8px 0;
+        }
+        input[type="range"]:focus {
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8.4px;
+            cursor: pointer; 
+            animate: 0.2s;
+            box-shadow: 1px 1px 1px #696969;
+            background: #3858e9;
+            border-radius: 1.3px;
+            border: 0.2px solid #696969;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            box-shadow: 1px 1px 1px #696969;
+            border: 1px solid #696969;
+            height: 26px;
+            width: 16px;
+            border-radius: 3px;
+            background: #ffffff;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -10px;
+        }
+        input[type="range"]:focus::-webkit-slider-runnable-track {
+            background: #3858e9;
+        }
+        input[type="range"]::-moz-range-track {
+            width: 100%;
+            height: 8.4px;
+            cursor: pointer;
+            animate: 0.2s;
+            box-shadow: 1px 1px 1px #696969;
+            background: #3858e9;
+            border-radius: 1.3px;
+            border: 0.2px solid #696969;
+        }
+        input[type="range"]::-moz-range-thumb {
+            box-shadow: 1px 1px 1px #696969;
+            border: 1px solid #696969;
+            height: 36px;
+            width: 16px;
+            border-radius: 3px;
+            background: #ffffff;
+            cursor: pointer;
+        }
+        input[type="range"]::-ms-track {
+            width: 100%;
+            height: 8.4px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+        input[type="range"]::-ms-fill-lower {
+            background: #3858e9;
+            border: 0.2px solid #696969;
+            border-radius: 2.6px;
+            box-shadow: 1px 1px 1px #696969;
+        }
+        input[type="range"]::-ms-fill-upper {
+            background: #3858e9;
+            border: 0.2px solid #696969;
+            border-radius: 2.6px;
+            box-shadow: 1px 1px 1px #696969;
+        }
+        input[type="range"]::-ms-thumb {
+            margin-top: 1px;
+            box-shadow: 1px 1px 1px #696969;
+            border: 1px solid #696969;
+            height: 36px;
+            width: 16px;
+            border-radius: 3px;
+            background: #ffffff;
+            cursor: pointer;
+        }
+    
