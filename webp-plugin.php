@@ -270,10 +270,13 @@ function webp_plugin_handle_upload_convert_to_webp($upload) {
 function webp_plugin_file_size_reduction_tips_callback() {
     $options = get_option('webp_plugin_options');
     $file_size_reduction_tips = isset($options['file_size_reduction_tips']) ? $options['file_size_reduction_tips'] : '';
-    $default_message = esc_html__("Upload, Install and Activate the plugin <strong>BEFORE</strong> uploading the images you would like to convert.", 'webp-plugin');
+    // Removed the <strong> tags for bold formatting
+    $default_message = esc_html__("Upload, Install and Activate the plugin BEFORE uploading the images you would like to convert.", 'webp-plugin');
 
-    echo '<textarea name="webp_plugin_options[file_size_reduction_tips]" rows="5" cols="50">' . esc_textarea($file_size_reduction_tips ? $file_size_reduction_tips : $default_message) . '</textarea>';
+    // Directly echo the message instead of using a textarea
+    echo $file_size_reduction_tips ? esc_html($file_size_reduction_tips) : $default_message;
 }
+
 
 // Compression level
 function webp_plugin_image_compression_callback() {
