@@ -9,4 +9,8 @@
 - **Streamlined Media Library**: Maintains an uncluttered Media Library by uploading only the WebP version of _**ONLY ONE SIZE**_ of image(s).
 - **Performance Enhancement**: Utilizes WebP's superior compression to dramatically improve website loading times.
 
+Do you want to support my work for as little as 10€?
+Download the Plugin [here](https://digitalaccolades.gumroad.com/l/convert)
+
+
 The Convert JPG, PNG to WebP plugin simplifies the process of converting PNG, JPG, images to the WebP format within WordPress. Enhancing your website's performance by reducing image file sizes without compromising quality.
