@@ -10,6 +10,10 @@
 - **Streamlined Media Library**: Maintains an uncluttered Media Library by uploading only the WebP version of _**ONLY ONE SIZE**_ of image(s).
 - **Performance Enhancement**: Utilizes WebP's superior compression to dramatically improve website loading times.
 
+#### Screenshot
+![Screenshot](https://github.com/luc-constantin/Convert-JPG-PNG-to-WebP-Wordpress-free-Plugin/assets/56940002/a386d3fb-52ee-4099-aa6f-4c22c0087a0c)
+
+
 Do you want to support my work for as little as 10€?
 Download the Plugin [here](https://digitalaccolades.gumroad.com/l/convert)
 
