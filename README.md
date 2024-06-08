@@ -1,4 +1,4 @@
-# Convert-JPG-PNG-to-WebP WordPress Plugin
+# Convert-JPG-PNG-to-WebP Free WordPress Plugin
 
 Support my work and download the Pro Version for as little as 10€ for a limited time!
 PRO capabilities:
