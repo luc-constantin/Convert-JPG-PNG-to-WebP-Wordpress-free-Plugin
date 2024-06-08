@@ -1,6 +1,6 @@
 # Convert-JPG-PNG-to-WebP
 
-Support my work and download the Pro Version for as little as 10€ for a limited time?
+Support my work and download the Pro Version for as little as 10€ for a limited time!
 PRO capabilities:
 - **Batch Conversion:** Convert multiple images at once for efficient optimization.
 - **Selective Conversion:** Choose specific images to convert rather than processing your entire media library.
