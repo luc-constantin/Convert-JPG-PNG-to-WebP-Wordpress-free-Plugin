@@ -12,7 +12,7 @@ PRO capabilities:
 - **Security and Best Practices:** Adheres to WordPress security standards to prevent vulnerabilities and ensure reliability.
 [Here](https://blog.accolades.dev/convert-jpg-png-to-webp-pro-optimize-wordpress/) is a more detailed list of all the capabilities 
 
-Purchase the Plugin at a limited-time downloads (50)  offer of ONLY 1€ [here](https://digitalaccolades.gumroad.com/l/convert-jpg-png-to-webp-pro)
+# Purchase the Plugin at a limited-time downloads (50)  offer of ONLY 1€ [here](https://digitalaccolades.gumroad.com/l/convert-jpg-png-to-webp-pro)
 
 ## As a WordPress developer myself I am deeply invested in pushing the boundaries of website performance and visual quality, I'm excited to bring you a plugin that's set to redefine image handling in WordPress.
 ![Convert JPG, PNG to WebP free WordPress plugin](https://github.com/luc-constantin/Convert-JPG-PNG-to-WebP-Wordpress-free-Plugin/assets/56940002/4f705376-39f2-4754-8778-f0161324683b)
